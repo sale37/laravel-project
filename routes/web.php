@@ -11,6 +11,29 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view('page')->with('first_name', 'Sale');
+})->name('get');
+
+Route::post('/post', function () {
+    return 'neki string za post';
+})->name('post')->middleware('check.age');
+
+Route::put('/put', function () {
+    return 'neki string za put';
+})->name('put');
+
+Route::patch('/patch', function () {
+    return 'neki string za patch';
+})->name('patch');
+
+Route::delete('/delete', function () {
+    return 'neki string za post';
+})->name('delete')->middleware('auth');
+
+
