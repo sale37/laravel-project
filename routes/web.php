@@ -12,28 +12,16 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/form', function () {
-    return view('page')->with('first_name', 'Sale');
-})->name('get');
+Route::get('/form', 'HomeController@create')->name('get');
 
-Route::post('/post', function () {
-    return 'neki string za post';
-})->name('post')->middleware('check.age');
+Route::post('/post', 'HomeController@store')->name('post');
 
-Route::put('/put', function () {
-    return 'neki string za put';
-})->name('put');
+Route::put('/put', 'HomeController@update')->name('put');
 
-Route::patch('/patch', function () {
-    return 'neki string za patch';
-})->name('patch');
+Route::patch('/patch', 'HomeController@patch')->name('patch');
 
-Route::delete('/delete', function () {
-    return 'neki string za post';
-})->name('delete')->middleware('auth');
+Route::delete('/delete', 'HomeController@destroy')->name('delete');
 
 
