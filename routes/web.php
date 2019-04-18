@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
+Route::get('/form', function () {
     return view('page')->with('first_name', 'Sale');
 })->name('get');
 
