@@ -24,6 +24,5 @@ $factory->define(User::class, function (Faker $faker) {
         'company' => Str::random(10),
         'country' => Str::random(10),
         'remember_token' => Str::random(10),
-        'zip' => Str::random(10),
     ];
 });

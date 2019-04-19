@@ -12,8 +12,6 @@
 */
 
 
-Route::get('/', 'HomeController@index');
-
 Route::get('/form', 'HomeController@create')->name('get');
 
 Route::post('/post', 'HomeController@store')->name('post');
@@ -25,3 +23,7 @@ Route::patch('/patch', 'HomeController@patch')->name('patch');
 Route::delete('/delete', 'HomeController@destroy')->name('delete');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
